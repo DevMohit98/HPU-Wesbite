@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  ---color: #5c6bc0;
+  ---font-color: #fafafa;
+  ---font-family: "Poppins", sans-serif;
+}
+/* particless*/
+#tsparticles {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+/* login screen and signup screen */
+.Screenbg {
+  position: relative;
+}
+.loginSignBg {
+  width: 70vw;
+  height: auto;
+  background-color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.left-col {
+  height: 100%;
+  background-color: var(---color);
+}
+.left-col img {
+  width: 100%;
+  height: auto;
+}
+.right-col .CreateAccount-link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-family: var(---font-family);
+  font-weight: 100;
+}
+.right-col .btn-primary,
+.login-form .btn-primary {
+  background-color: var(---color);
+  border-color: var(---color);
+  color: var(---font-color);
+}
+.right-col .btn {
+  font-family: var(---font-family);
+}
+.CreateAccount {
+  display: flex;
+  justify-content: flex-end;
+}
+.CreateAccount .CreateAccount-Content {
+  display: flex;
+  align-items: center;
+}
+.right-col .create-title {
+  padding-top: 20px;
+  font-family: var(---font-family);
+  font-size: 1.9rem;
+  margin-top: 20px;
+}
+.right-col .login-form {
+  margin-top: 40px;
+}
+.right-col .form-label {
+  font-family: var(---font-family);
+  font-size: 1rem;
+  color: #000;
+}
+.right-col .form-control {
+  width: 25vw;
+  font-family: var(---font-family);
+  background-color: #fafafa;
+  border-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.login-form .btn {
+  width: 25vw;
+}
+
+.line {
+  position: relative;
+  width: 25vw;
+  font-family: var(---font-family);
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #000;
+  font-family: var(---font-family);
+  font-weight: 100;
+}
+.line::before {
+  content: "";
+  width: 11vw;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+}
+.line::after {
+  content: "";
+  width: 11vw;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 0;
+}
+.right-col .googlelogin {
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000 !important;
+  font-family: var(---font-family) !important;
+  font-size: 1.2rem !important;
+  font-weight: 900;
+}
+.right-col p {
+  font-family: var(---font-family);
+  width: 25vw;
+  font-size: 0.8rem;
+}
+/* Regsiteration Page */
+.registerationBg {
+  width: 70vw;
+  height: 80vh;
+  background-color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+}
+.registerationBg::-webkit-scrollbar {
+  background-color: #fafafa;
+}
+.registerationBg .userGreeting {
+  font-family: var(---font-family);
+  font-size: 3rem;
+  color: #000;
+}
+.registerationBg .userGreeting .userName,
+.regMsg span {
+  color: var(---color);
+}
+.regMsg {
+  font-family: var(---font-family);
+  color: #000;
+  font-size: 2.3rem;
+  margin-top: 20px;
+}
+.filled-details .title,
+.Not-filled-details .title {
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-family: var(---font-family);
+  color: #000;
+  font-weight: 500;
+}
+.Not-filled-details hr,
+.filled-details hr {
+  color: var(---color);
+  width: 20vw;
+  border: 1px solid;
+}
+.filled-details .form-label,
+.Not-filled-details .form-label {
+  font-size: 2rem;
+  font-family: var(---font-family);
+  color: var(---color);
+}
+.filled-details .form-control,
+.Not-filled-details .form-control,
+.form-select {
+  width: 100%;
+  font-family: var(---font-family);
+  background-color: #fafafa;
+  border-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form-check-input:checked {
+  background-color: var(---color) !important;
+  border-color: var(---color) !important;
+}
+.form-check-label {
+  font-family: var(---font-family);
+  color: #000;
+  font-size: 1rem;
+}
+.Not-filled-details .btn-primary {
+  color: #fafafa !important;
+  background-color: var(---color) !important;
+  border-color: var(---color) !important;
+}
+.Not-filled-details .btn {
+  text-transform: uppercase;
+  font-family: var(---font-family);
+}
+/* media queries */
+@media screen and (max-width: 992px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .right-col .form-control {
+    width: 50vw;
+  }
+  .login-form .btn {
+    width: 50vw;
+  }
+  .line {
+    width: 50vw;
+  }
+  .line::before {
+    width: 22vw;
+  }
+  .line::after {
+    width: 22vw;
+  }
+  .right-col .googlelogin {
+    width: 50vw;
+  }
+  .right-col p {
+    width: 50vw;
+    text-align: center;
+  }
+  .loginSignBg .row .col:nth-child(1) {
+    display: none;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 786px) {
+  .loginSignBg {
+    width: auto;
+    height: auto;
+  }
+  .right-col .create-title {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .loginSignBg {
+    width: auto;
+    height: auto;
+  }
+  .right-col .CreateAccount-link {
+    font-size: 1rem;
+  }
+  .right-col .create-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .right-col .btn.btn-primary {
+    width: 100px;
+  }
+  .right-col .form-control {
+    width: 60vw;
+  }
+  .login-form .btn {
+    width: 60vw !important;
+  }
+  .right-col .googlelogin {
+    width: auto;
+    font-size: 1rem !important;
+  }
+}
