@@ -11,8 +11,7 @@ router.route("/name=:name").get((request, respond) => {
   };
   findStudent(name);
 });
-// inserting other details of student
-router.route("/name=:name").post((request, respond) => {
+/* router.route("/name=:name").post((request, respond) => {
   const { name } = request.params;
   const { FullName, FatherName, MotherName, Address, DOB, Course } =
     request.body;
@@ -32,10 +31,10 @@ router.route("/name=:name").post((request, respond) => {
         }
       );
       respond.json({ response: true, data: AdditionalInfo });
-    } catch {
-      respond.json({ response: false, data: "not inserted" });
+    } catch (e) {
+      console.log(e);
     }
   };
   insertAdditional(name);
-});
+}); */
 module.exports = router;

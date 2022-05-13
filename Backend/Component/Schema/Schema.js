@@ -28,5 +28,8 @@ const StudentSchema = mongoose.Schema({
   Course: {
     type: String,
   },
+  ProfilePicture: {
+    type: String,
+  },
 });
 module.exports = { StudentSchema };

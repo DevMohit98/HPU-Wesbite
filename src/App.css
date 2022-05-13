@@ -169,6 +169,7 @@
   font-family: var(---font-family);
   color: #000;
   font-weight: 500;
+  font-size: 1.4rem;
 }
 .Not-filled-details hr,
 .filled-details hr {
@@ -178,7 +179,7 @@
 }
 .filled-details .form-label,
 .Not-filled-details .form-label {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: var(---font-family);
   color: var(---color);
 }
@@ -190,6 +191,7 @@
   background-color: #fafafa;
   border-color: #fafafa;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1rem;
 }
 
 .form-check-input:checked {
@@ -243,6 +245,35 @@
   .loginSignBg .row .col:nth-child(1) {
     display: none;
   }
+  .filled-details .form-control,
+  .Not-filled-details .form-control,
+  .form-select {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 786px) and (max-width: 992px) {
+  .filled-details .form-control,
+  .Not-filled-details .form-control,
+  .form-select {
+    width: 60vw;
+    font-size: 0.9rem !important;
+  }
+  .regMsg {
+    font-size: 1.6rem !important;
+    margin-top: 10px;
+  }
+  .filled-details .title,
+  .Not-filled-details .title {
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  .filled-details .form-label,
+  .Not-filled-details .form-label {
+    font-size: 1.6rem;
+  }
+  .registerationBg .userGreeting {
+    font-size: 2rem;
+  }
 }
 @media screen and (min-width: 576px) and (max-width: 786px) {
   .loginSignBg {
@@ -251,6 +282,28 @@
   }
   .right-col .create-title {
     font-size: 1.3rem;
+  }
+  .filled-details .form-control,
+  .Not-filled-details .form-control,
+  .form-select {
+    width: 60vw !important;
+    font-size: 0.9rem !important;
+  }
+  .regMsg {
+    font-size: 1.4rem !important;
+    margin-top: 10px;
+  }
+  .filled-details .title,
+  .Not-filled-details .title {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+  .filled-details .form-label,
+  .Not-filled-details .form-label {
+    font-size: 1.3rem;
+  }
+  .registerationBg .userGreeting {
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 576px) {
@@ -277,5 +330,30 @@
   .right-col .googlelogin {
     width: auto;
     font-size: 1rem !important;
+  }
+  .registerationBg .userGreeting {
+    font-size: 1.4rem;
+  }
+  .regMsg {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  .filled-details .title,
+  .Not-filled-details .title {
+    font-size: 0.9rem;
+    padding-top: 5px;
+  }
+  .filled-details .form-control,
+  .Not-filled-details .form-control,
+  .form-select {
+    width: 60vw !important;
+    font-size: 0.7rem !important;
+  }
+  .filled-details .form-label,
+  .Not-filled-details .form-label {
+    font-size: 1rem;
+  }
+  .form-check-label {
+    font-size: 0.7rem;
   }
 }

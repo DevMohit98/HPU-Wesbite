@@ -18,7 +18,9 @@ const AppProvider = ({ children }) => {
     Address: "",
     DOB: "",
   });
-  const [options, setOptions] = useState("");
+  const [file, setFiles] = useState("");
+  const [checked, setChecked] = useState(false);
+  const [options, setOptions] = useState("MCA");
   const HandleLogin = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -40,6 +42,12 @@ const AppProvider = ({ children }) => {
     const value = event.target.value;
     setRegisterForm({ ...RegisterForm, [name]: value });
   };
+  const HandleImage = (event) => {
+    setFiles(event.target.files[0]);
+  };
+  const HandleCheck = () => {
+    setChecked(!checked);
+  };
   return (
     <AppContext.Provider
       value={{
@@ -55,6 +63,10 @@ const AppProvider = ({ children }) => {
         HandleCompleteRegsiter,
         options,
         HandleOptions,
+        file,
+        HandleImage,
+        HandleCheck,
+        checked,
       }}
     >
       {children}

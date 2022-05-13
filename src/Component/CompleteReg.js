@@ -3,6 +3,8 @@ import "../App.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useGlobalContext } from "./Context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const CompleteReg = () => {
   const {
     RegsiteredData,
@@ -11,7 +13,12 @@ const CompleteReg = () => {
     HandleCompleteRegsiter,
     options,
     HandleOptions,
+    file,
+    HandleImage,
+    checked,
+    HandleCheck,
   } = useGlobalContext();
+
   const { name } = useParams();
   const FetchStudentDetails = () => {
     axios
@@ -23,7 +30,6 @@ const CompleteReg = () => {
         console.log(e);
       });
   };
-
   useEffect(() => {
     FetchStudentDetails();
     // eslint-disable-next-line
@@ -38,13 +44,29 @@ const CompleteReg = () => {
       DOB: RegisterForm.DOB,
       Course: options,
     };
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("FullName", Details.FullName);
+    formData.append("FatherName", Details.FatherName);
+    formData.append("MotherName", Details.MotherName);
+    formData.append("DOB", Details.DOB);
+    formData.append("Course", Details.Course);
+    formData.append("Address", Details.Address);
     axios
-      .post(`http://localhost:8080/register/name=${name}`, Details)
+      .post(`http://localhost:8080/register/name=${name}`, formData)
       .then((res) => {
         console.log(res);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((res) => {
+        if (res.response.data.response === "false") {
+          res.response.data.errors.map((items) => {
+            return toast.error(items, {
+              position: "top-center",
+              hideProgressBar: false,
+              theme: "colored",
+            });
+          });
+        }
       });
   };
   return (
@@ -107,7 +129,7 @@ const CompleteReg = () => {
                 <h2 className="title">Fill the Following Details</h2>
                 <hr />
               </div>
-              <form onSubmit={HandleCompleteReg}>
+              <form onSubmit={HandleCompleteReg} encType="multipart/form-data">
                 <div className="mb-4">
                   <label htmlFor="FullName" className="form-label">
                     Full Name
@@ -189,24 +211,19 @@ const CompleteReg = () => {
                   <label htmlFor="Picture" className="form-label">
                     Profile Picture
                   </label>
-                  <input className="form-control" type="file" name="Picture" />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="Signature" className="form-label">
-                    Signature
-                  </label>
                   <input
                     className="form-control"
                     type="file"
-                    name="Signature"
+                    onChange={HandleImage}
                   />
                 </div>
                 <div className="form-check mb-4">
                   <input
                     className="form-check-input"
                     type="checkbox"
-                    value=""
                     id="flexCheckDefault"
+                    checked={checked}
+                    onChange={HandleCheck}
                   />
                   <label
                     className="form-check-label"
@@ -216,15 +233,22 @@ const CompleteReg = () => {
                   </label>
                 </div>
                 <div className="d-flex justify-content-end">
-                  <button className="btn btn-primary" type="submit">
-                    Save
-                  </button>
+                  {checked === false ? (
+                    <button className="btn btn-primary" type="submit" disabled>
+                      Save
+                    </button>
+                  ) : (
+                    <button className="btn btn-primary" type="submit">
+                      Save
+                    </button>
+                  )}
                 </div>
               </form>
             </div>
           </div>
         </div>
       </section>
+      <ToastContainer />
     </>
   );
 };
