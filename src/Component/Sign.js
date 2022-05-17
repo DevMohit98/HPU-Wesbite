@@ -7,7 +7,6 @@ import GoogleLogin from "react-google-login";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
 const Sign = () => {
   const { info, HandleChange, setInfo } = useGlobalContext();
   const HandleForm = (event) => {
@@ -58,7 +57,9 @@ const Sign = () => {
                     <Link to="/login" className="CreateAccount-link">
                       Already have an account ?
                     </Link>
-                    <button className="btn btn-primary mx-3">Log in</button>
+                    <button className="btn btn-primary button mx-3">
+                      Log in
+                    </button>
                   </div>
                 </div>
                 <div className="container">

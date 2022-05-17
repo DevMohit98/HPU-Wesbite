@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useGlobalContext } from "./Context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ParticlesBackground from "./ParticlesBackground";
 const CompleteReg = () => {
   const {
     RegsiteredData,
@@ -56,6 +57,7 @@ const CompleteReg = () => {
       .post(`http://localhost:8080/register/name=${name}`, formData)
       .then((res) => {
         console.log(res);
+        window.location = "/dashboard";
       })
       .catch((res) => {
         if (res.response.data.response === "false") {
@@ -71,6 +73,7 @@ const CompleteReg = () => {
   };
   return (
     <>
+      <ParticlesBackground />
       <section>
         <div className="Screenbg"></div>
         <div className="registerationBg p-3">

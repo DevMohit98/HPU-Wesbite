@@ -9,6 +9,7 @@
   ---font-color: #fafafa;
   ---font-family: "Poppins", sans-serif;
 }
+
 /* particless*/
 #tsparticles {
   width: 100%;
@@ -67,7 +68,6 @@
   padding-top: 20px;
   font-family: var(---font-family);
   font-size: 1.9rem;
-  margin-top: 20px;
 }
 .right-col .login-form {
   margin-top: 40px;
@@ -212,8 +212,62 @@
   text-transform: uppercase;
   font-family: var(---font-family);
 }
+/* DashBoard */
+.DashBoardBg {
+  width: 70vw;
+  height: 70vh;
+  background-color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-pills .nav-link.active {
+  background-color: var(---color) !important;
+  font-family: var(---font-family);
+  border-radius: 0 !important;
+}
+.nav-pills .nav-link {
+  color: #5c6bc0;
+  font-family: var(---font-family);
+  font-size: 1rem;
+}
+.dash .btn-primary {
+  background-color: var(---color) !important;
+  border-color: var(---color) !important;
+  color: #fafafa;
+  border-radius: 0 !important ;
+  margin-left: 10px;
+}
+.dash .btn {
+  font-family: var(---font-family);
+  font-size: 1rem;
+  width: auto;
+  height: 40px;
+}
+.user-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-profile h1 {
+  font-size: 1.5rem;
+  font-family: var(---font-family);
+  margin-left: 10px;
+  color: var(---color);
+}
+.dash {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile {
+  display: none;
+}
 /* media queries */
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  /*login and sign up page */
   .container {
     display: flex;
     justify-content: center;
@@ -221,37 +275,93 @@
     flex-direction: column;
   }
   .right-col .form-control {
-    width: 50vw;
+    width: 60vw;
   }
   .login-form .btn {
-    width: 50vw;
+    width: 60vw;
   }
   .line {
-    width: 50vw;
+    width: 60vw;
   }
   .line::before {
-    width: 22vw;
+    width: 28vw;
   }
   .line::after {
-    width: 22vw;
+    width: 28vw;
   }
   .right-col .googlelogin {
-    width: 50vw;
+    width: 60vw;
   }
   .right-col p {
     width: 50vw;
     text-align: center;
+    font-size: 1.3rem;
   }
   .loginSignBg .row .col:nth-child(1) {
     display: none;
   }
+  /* registeration page */
   .filled-details .form-control,
   .Not-filled-details .form-control,
   .form-select {
     width: 50vw;
   }
+  /* dashboard */
+  .dash {
+    background-color: #f5f5f5;
+  }
+  .mobile {
+    display: block;
+    padding: 16px;
+    position: relative;
+  }
+  #dashboard-tabs {
+    display: block;
+    position: absolute;
+    top: 9vh;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+
+  .hidetabs {
+    opacity: 0;
+  }
 }
+
 @media screen and (min-width: 786px) and (max-width: 992px) {
+  /* login and sign up form */
+  .loginSignBg .row .col:nth-child(1) {
+    display: none;
+  }
+  .right-col .form-control {
+    width: 60vw;
+  }
+  .right-col .create-title {
+    text-align: center;
+  }
+  .login-form .btn {
+    width: 60vw;
+  }
+  .line {
+    width: 60vw;
+  }
+  .line::before {
+    width: 28vw;
+  }
+  .line::after {
+    width: 28vw;
+  }
+  .right-col .googlelogin {
+    width: 60vw;
+  }
+  .right-col p {
+    width: 60vw;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  /* registeration Page */
   .filled-details .form-control,
   .Not-filled-details .form-control,
   .form-select {
@@ -274,15 +384,64 @@
   .registerationBg .userGreeting {
     font-size: 2rem;
   }
+  /* dash board */
+  .dash {
+    background-color: #f5f5f5;
+  }
+  #dashboard-tabs {
+    display: block;
+    position: absolute;
+    top: 9vh;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+  .mobile {
+    display: block;
+    padding: 16px;
+  }
+  .hidetabs {
+    opacity: 0;
+  }
 }
 @media screen and (min-width: 576px) and (max-width: 786px) {
+  /* login and signup page */
+  .loginSignBg .row .col:nth-child(1) {
+    display: none;
+  }
   .loginSignBg {
     width: auto;
     height: auto;
   }
   .right-col .create-title {
     font-size: 1.3rem;
+    text-align: center;
   }
+  .right-col .form-control {
+    width: 60vw;
+  }
+  .login-form .btn {
+    width: 60vw;
+  }
+  .line {
+    width: 60vw;
+  }
+  .line::before {
+    width: 28vw;
+  }
+  .line::after {
+    width: 28vw;
+  }
+  .right-col .googlelogin {
+    width: 60vw;
+  }
+  .right-col p {
+    width: 60vw;
+    text-align: center;
+    font-size: 1rem;
+  }
+  /* registeration page */
   .filled-details .form-control,
   .Not-filled-details .form-control,
   .form-select {
@@ -305,20 +464,54 @@
   .registerationBg .userGreeting {
     font-size: 2rem;
   }
+  /* dashboard */
+  .dash {
+    background-color: #f5f5f5;
+  }
+  #dashboard-tabs {
+    display: block;
+    position: absolute;
+    top: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+  .mobile {
+    display: block;
+    padding: 16px;
+  }
+  .dash .btn-primary {
+    margin-left: 0px;
+  }
+  .nav-pills .nav-link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .hidetabs {
+    opacity: 0;
+  }
 }
 @media screen and (max-width: 576px) {
+  /* login and sign up page */
   .loginSignBg {
     width: auto;
     height: auto;
+  }
+  .loginSignBg .row .col:nth-child(1) {
+    display: none;
   }
   .right-col .CreateAccount-link {
     font-size: 1rem;
   }
   .right-col .create-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
   }
-  .right-col .btn.btn-primary {
+  .right-col .button {
+    font-size: 0.9rem !important;
     width: 100px;
   }
   .right-col .form-control {
@@ -331,6 +524,27 @@
     width: auto;
     font-size: 1rem !important;
   }
+  .login-form .btn {
+    width: 60vw;
+  }
+  .line {
+    width: 60vw;
+  }
+  .line::before {
+    width: 25vw;
+  }
+  .line::after {
+    width: 25vw;
+  }
+  .right-col .googlelogin {
+    width: 60vw;
+  }
+  .right-col p {
+    width: 60vw;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  /* registeration page */
   .registerationBg .userGreeting {
     font-size: 1.4rem;
   }
@@ -355,5 +569,41 @@
   }
   .form-check-label {
     font-size: 0.7rem;
+  }
+  .user-profile h1 {
+    font-size: 0.9rem;
+  }
+  /* dashboard */
+  .DashBoardBg {
+    width: 80vw;
+    height: 80vh;
+  }
+  .dash {
+    background-color: #f5f5f5;
+  }
+  #dashboard-tabs {
+    display: block;
+    position: absolute;
+    top: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+  .dash .btn-primary {
+    margin-left: 0px;
+  }
+  .nav-pills .nav-link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .hidetabs {
+    opacity: 0;
+  }
+  .mobile {
+    display: block;
+    padding: 16px;
   }
 }

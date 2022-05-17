@@ -5,7 +5,6 @@ import GoogleLogin from "react-google-login";
 import { useGlobalContext } from "./Context";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import axios from "axios";
 const Login = () => {
   const { LogIn, HandleLogin, setLogin } = useGlobalContext();
@@ -67,7 +66,9 @@ const Login = () => {
                     <h1 className="CreateAccount-link">
                       Don't have an account ?
                     </h1>
-                    <button className="btn btn-primary mx-3">Sign in</button>
+                    <button className="btn btn-primary mx-3 button">
+                      Sign in
+                    </button>
                   </div>
                 </div>
                 <div className="container">
