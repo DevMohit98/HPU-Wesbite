@@ -18,7 +18,7 @@ const App = () => {
             path="/registeration/name=:name"
             element={<CompleteReg />}
           ></Route>
-          {<Route path="/dashboard" element={<DashBoard />}></Route>}
+          <Route path="/dashboard/name=:name" element={<DashBoard />}></Route>
         </Routes>
       </Router>
     </>

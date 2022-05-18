@@ -25,6 +25,7 @@ app.use("/register", CompleteReg);
 app.post("/register/name=:name", upload, CompleteRegValidation, (req, res) => {
   const { name } = req.params;
   const { FullName, FatherName, MotherName, Address, DOB, Course } = req.body;
+  console.log(req.file);
   const insertAdditional = async (name) => {
     try {
       const AdditionalInfo = await Student.updateOne(
@@ -37,7 +38,7 @@ app.post("/register/name=:name", upload, CompleteRegValidation, (req, res) => {
             Address: Address,
             DOB: DOB,
             Course: Course,
-            ProfilePicture: req.file.filename,
+            ProfilePicture: req.file.path,
           },
         }
       );

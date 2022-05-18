@@ -215,7 +215,7 @@
 /* DashBoard */
 .DashBoardBg {
   width: 70vw;
-  height: 70vh;
+  height: auto;
   background-color: #fafafa;
   position: absolute;
   top: 50%;
@@ -261,9 +261,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid var(---color);
 }
 .mobile {
   display: none;
+}
+/* profile */
+.profile .form-label {
+  font-family: var(---font-family);
+  color: var(---color);
+}
+.profile .form-control {
+  width: 100%;
+  font-family: var(---font-family);
+  background-color: #fafafa;
+  border-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1rem;
 }
 /* media queries */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
@@ -323,6 +337,7 @@
     justify-content: flex-end;
     background-color: #f5f5f5;
     width: 100%;
+    transition: all 0.3s ease;
   }
 
   .hidetabs {
@@ -396,6 +411,7 @@
     justify-content: flex-end;
     background-color: #f5f5f5;
     width: 100%;
+    transition: all 0.3s ease;
   }
   .mobile {
     display: block;
@@ -478,6 +494,7 @@
     flex-direction: column;
     background-color: #f5f5f5;
     width: 100%;
+    transition: all 0.3s ease;
   }
   .mobile {
     display: block;
@@ -576,7 +593,7 @@
   /* dashboard */
   .DashBoardBg {
     width: 80vw;
-    height: 80vh;
+    height: auto;
   }
   .dash {
     background-color: #f5f5f5;
@@ -591,6 +608,7 @@
     flex-direction: column;
     background-color: #f5f5f5;
     width: 100%;
+    transition: all 0.3s ease;
   }
   .dash .btn-primary {
     margin-left: 0px;

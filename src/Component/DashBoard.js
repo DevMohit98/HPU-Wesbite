@@ -1,7 +1,29 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "../App.css";
-import review from "../Assets/review.jpg";
+import Profile from "../Dashboard Component/Profile";
 const DashBoard = () => {
+  const { name } = useParams();
+  const [picture, setPicture] = useState({
+    ProfilePicture: "",
+    Name: "",
+  });
+  const FetchPicture = () => {
+    axios.get(`http://localhost:8080/register/name=${name}`).then((res) => {
+      res.data.data.map((items) => {
+        const { ProfilePicture, Name } = items;
+        return setPicture({
+          ProfilePicture: ProfilePicture,
+          Name: Name,
+        });
+      });
+    });
+  };
+  useEffect(() => {
+    FetchPicture();
+    // eslint-disable-next-line
+  }, []);
   return (
     <>
       <section>
@@ -10,17 +32,17 @@ const DashBoard = () => {
           <div className="dash">
             <div className="user-profile p-3">
               <img
-                src={review}
+                src={picture.ProfilePicture}
                 alt="userImage"
                 width="50"
                 height="50"
                 className="rounded-pill"
               ></img>
-              <h1>Mohit Ramola</h1>
+              <h1>{picture.Name}</h1>
             </div>
             <div className="mobile" id="toggle">
               <button className="btn btn-primary" type="button">
-                <i class="fa fa-bars"></i>
+                <i className="fa fa-bars"></i>
               </button>
             </div>
             <ul className="nav nav-pills  p-3 hidetabs" id="dashboard-tabs">
@@ -44,17 +66,13 @@ const DashBoard = () => {
                 </a>
               </li>
               <button className="btn btn-primary">
-                Log out <i className="fa fa-power-off mx-3"></i>
+                Log out <i className="fa fa-power-off"></i>
               </button>
             </ul>
           </div>
           <div className="tab-content p-3" id="tab-content">
             <div className="tab-pane fade show active" id="profile">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,
-              </p>
+              <Profile />
             </div>
             <div className="tab-pane fade " id="assignment">
               <p>

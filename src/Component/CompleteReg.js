@@ -57,7 +57,7 @@ const CompleteReg = () => {
       .post(`http://localhost:8080/register/name=${name}`, formData)
       .then((res) => {
         console.log(res);
-        window.location = "/dashboard";
+        window.location = `/dashboard/name=${name}`;
       })
       .catch((res) => {
         if (res.response.data.response === "false") {
