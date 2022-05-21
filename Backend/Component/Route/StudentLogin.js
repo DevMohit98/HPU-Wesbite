@@ -10,7 +10,11 @@ router.route("/login").post((request, respond) => {
       const FindUser = await Student.findOne({ EmailID: mail });
       const isMatch = await bcrypt.compare(pass, FindUser.Password);
       if (isMatch) {
-        return respond.json({ response: "true", login: "login succesfully" });
+        return respond.json({
+          response: "true",
+          login: "login succesfully",
+          Name: FindUser.Name,
+        });
       } else {
         return respond.json({
           response: "false",

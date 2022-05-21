@@ -16,7 +16,7 @@ require("./Component/Connection/DB");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-
+app.use("/public", express.static("public"));
 //api
 app.use("/studentReg", Formvalidation, StudentReg);
 app.use("/studentLogin", LoginValidation, StudentLogin);
@@ -38,7 +38,7 @@ app.post("/register/name=:name", upload, CompleteRegValidation, (req, res) => {
             Address: Address,
             DOB: DOB,
             Course: Course,
-            ProfilePicture: req.file.path,
+            ProfilePicture: req.file.filename,
           },
         }
       );

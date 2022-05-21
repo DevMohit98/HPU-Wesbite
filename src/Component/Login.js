@@ -17,13 +17,16 @@ const Login = () => {
     axios
       .post("http://localhost:8080/studentLogin/login", LoginDetails)
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         if (res.data.response === "true") {
           toast.success(res.data.login, {
             position: "top-center",
             hideProgressBar: false,
             theme: "colored",
           });
+          setInterval(() => {
+            window.location = `/dashboard/name=${res.data.Name}`;
+          }, 2500);
         } else {
           toast.error(res.data.login, {
             position: "top-center",
@@ -48,6 +51,9 @@ const Login = () => {
       Pass: "",
     });
   };
+  const Redrict = () => {
+    window.location = `/sign`;
+  };
   return (
     <>
       <section>
@@ -66,7 +72,10 @@ const Login = () => {
                     <h1 className="CreateAccount-link">
                       Don't have an account ?
                     </h1>
-                    <button className="btn btn-primary mx-3 button">
+                    <button
+                      className="btn btn-primary mx-3 button"
+                      onClick={Redrict}
+                    >
                       Sign in
                     </button>
                   </div>

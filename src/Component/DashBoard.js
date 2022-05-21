@@ -12,10 +12,10 @@ const DashBoard = () => {
   const FetchPicture = () => {
     axios.get(`http://localhost:8080/register/name=${name}`).then((res) => {
       res.data.data.map((items) => {
-        const { ProfilePicture, Name } = items;
+        const { ProfilePicture, FullName } = items;
         return setPicture({
-          ProfilePicture: ProfilePicture,
-          Name: Name,
+          ProfilePicture: process.env.REACT_APP_IMAGE_PATH + ProfilePicture,
+          Name: FullName,
         });
       });
     });

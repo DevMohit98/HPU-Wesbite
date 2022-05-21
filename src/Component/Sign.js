@@ -39,6 +39,9 @@ const Sign = () => {
       Pass: "",
     });
   };
+  const Redrict = () => {
+    window.location = `/login`;
+  };
   return (
     <>
       <section>
@@ -54,10 +57,13 @@ const Sign = () => {
               <div className="right-col p-4">
                 <div className="CreateAccount">
                   <div className="CreateAccount-Content">
-                    <Link to="/login" className="CreateAccount-link">
+                    <h1 className="CreateAccount-link">
                       Already have an account ?
-                    </Link>
-                    <button className="btn btn-primary button mx-3">
+                    </h1>
+                    <button
+                      className="btn btn-primary button mx-3"
+                      onClick={Redrict}
+                    >
                       Log in
                     </button>
                   </div>
