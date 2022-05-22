@@ -19,8 +19,10 @@ const AppProvider = ({ children }) => {
     DOB: "",
   });
   const [file, setFiles] = useState("");
+
   const [checked, setChecked] = useState(false);
   const [options, setOptions] = useState("MCA");
+
   const HandleLogin = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -45,9 +47,11 @@ const AppProvider = ({ children }) => {
   const HandleImage = (event) => {
     setFiles(event.target.files[0]);
   };
+
   const HandleCheck = () => {
     setChecked(!checked);
   };
+
   return (
     <AppContext.Provider
       value={{

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../App.css";
 import Profile from "../Dashboard Component/Profile";
+import Assignment from "../Dashboard Component/Assignment";
 const DashBoard = () => {
   const { name } = useParams();
   const [picture, setPicture] = useState({
@@ -75,10 +76,7 @@ const DashBoard = () => {
               <Profile />
             </div>
             <div className="tab-pane fade " id="assignment">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-              </p>
+              <Assignment />
             </div>
             <div className="tab-pane fade " id="admitcard">
               <p>

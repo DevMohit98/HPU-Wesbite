@@ -279,6 +279,76 @@
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-size: 1rem;
 }
+/* assignment */
+.AssignmentForm .form-label {
+  font-family: var(---font-family);
+  color: var(---color);
+}
+.AssignmentForm .form-control {
+  width: 100%;
+  font-family: var(---font-family);
+  background-color: #fafafa;
+  border-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1rem;
+}
+.AssignmentForm .btn-primary {
+  color: #fafafa !important;
+  background-color: var(---color) !important;
+  border-color: var(---color) !important;
+}
+.AssignmentForm .btn {
+  text-transform: uppercase;
+  font-family: var(---font-family);
+}
+.due-title {
+  font-family: var(---font-family);
+  color: var(---color);
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+.card-bg {
+  width: auto;
+  height: 40vh;
+  overflow-y: scroll;
+}
+.card-bg::-webkit-scrollbar {
+  background-color: #fafafa;
+}
+.assignmnet-card {
+  width: auto;
+  height: auto;
+  background-color: #e74c3c;
+  border-radius: 10px;
+  margin: 10px 20px;
+}
+.assignmnet-card h2 {
+  color: var(---font-color);
+  font-family: var(---font-family);
+  font-size: 1rem;
+}
+.assignmnet-card .fa-solid {
+  color: #fafafa;
+}
+.assignmnet-card .left-days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-days h2 {
+  color: var(---font-color);
+  font-size: 1rem;
+  font-family: var(---font-family);
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.assignmnet-card h3 {
+  color: var(---font-color);
+  font-family: var(---font-family);
+  font-size: 1rem;
+  padding-top: 7px;
+  margin: 0px !important;
+}
 /* media queries */
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   /*login and sign up page */

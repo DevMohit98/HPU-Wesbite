@@ -1,3 +1,4 @@
+const { type } = require("@testing-library/user-event/dist/type");
 const mongoose = require("mongoose");
 // student schema
 const StudentSchema = mongoose.Schema({
@@ -31,5 +32,31 @@ const StudentSchema = mongoose.Schema({
   ProfilePicture: {
     type: String,
   },
+  DueAssignment: [
+    {
+      Name: {
+        type: String,
+      },
+      AssignDate: {
+        type: Date,
+      },
+    },
+  ],
+  CompletedAssignment: [
+    {
+      Name: {
+        type: String,
+      },
+      SubmitOn: {
+        type: Date,
+      },
+      Assignment: {
+        type: String,
+      },
+      RollNo: {
+        type: String,
+      },
+    },
+  ],
 });
 module.exports = { StudentSchema };
